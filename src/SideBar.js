@@ -4,6 +4,7 @@ import React from 'react'
 const sideBarStyle = (w, h, i, scale) => {
     const sc = divideScale(sinify(scale), i, 2)
     const wUpdate = w * sc
+    console.log(wUpdate)
     const x = (w - wUpdate) * i
     const y = (h / 2) * i
     const width = `${wUpdate}px`
@@ -16,6 +17,7 @@ const sideBarStyle = (w, h, i, scale) => {
 }
 
 const SideBar = ({w, h, scale, i}) => {
+    console.log(scale)
     return (<div style = {sideBarStyle(w, h, i, scale)}></div>)
 }
 

@@ -5,11 +5,11 @@ import SideBar from './SideBar'
 const Button = ({w, h, scale, onClick}) => {
     const btnText = scale == 0 ? "start" : "updating.."
     const btnStyle = {position : 'absolute', top: '0px', left : `${0.35 * w}px`}
-    return <button style = {btnStyle} {...onClick}>start</button>
+    return <button style = {btnStyle} onClick = {onClick}>start</button>
 }
 const DoubleSideBar = () => {
     const {w, h, resize, disableResize} = useDimension()
-    const {scale, start} = useAnimatedScale(0.02, 30)
+    const {scale, start} = useAnimatedScale(0.01, 30)
     useEffect(() => {
         resize()
         return disableResize
