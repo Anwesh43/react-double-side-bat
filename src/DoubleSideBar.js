@@ -10,6 +10,10 @@ const Button = ({w, h, scale, onClick}) => {
 const DoubleSideBar = () => {
     const {w, h, resize, disableResize} = useDimension()
     const {scale, start} = useAnimatedScale(0.02, 30)
+    useEffect(() => {
+        resize()
+        return disableResize
+    })
     return <div>
         <Button w = {w} h = {h} scale = {scale} onClick = {start}/>
         <React.Fragment>
